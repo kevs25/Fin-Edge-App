@@ -1,0 +1,216 @@
+
+
+<div class="Carousel" data-carousel>
+    <button class="prev-button" data-carousel-button="prev"><img src="/images/left-arrow.png"></button>
+    <button class="next-button" data-carousel-button="next"><img src="/images/right-arrow.png"></button>
+    <ul data-slides>
+        <li class="slide" data-active>
+            <img class="slide-images" src="/images/IMG_1.png" alt="img1">
+            <p>Empowering global transactions, breaking geographic barriers with effortless money transfers for individuals and businesses in a borderless world. to ensure seamless transactions across geographic boundaries. </p>
+        <li class="slide">
+            <img class="slide-images" src="/images/IMG_2.png" alt="img2">
+            <p>Revolutionizing cross-border business payments, enabling seamless transactions without geographic constraints, empowering businesses to thrive in a connected global economy.</p>
+        </li>
+        <li class="slide">
+            <img class="slide-images" src="/images/IMG_3.png" alt="img3">
+            <p>Simplifying cross-border payment tracking, empowering individuals and businesses with real-time visibility to ensure seamless transactions across geographic boundaries.</p>
+        </li>
+    </ul>
+</div>
+
+<script type="module">
+    const buttons = document.querySelectorAll("[data-carousel-button]")
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const clickedbtn = button.dataset.carouselButton === "next" ? 1: -1 
+            // Access the property which is set on HTML, if it is 1 go to next image or previous image
+            const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
+            // from button attribute we are getting the closest parent which is the data-carousel and from the parent we are accessing the slides
+        
+        const activeslide = slides.querySelector("[data-active]")
+        let newIndex = [...slides.children].indexOf(activeslide) + clickedbtn
+        //converting slides to an array 
+        if (newIndex < 0) newIndex = slides.children.length - 1 //if we go backwords from first image which is the last image
+        if (newIndex >= slides.children.length) newIndex = 0 // if we go past our last slide we start the index from first
+
+        slides.children[newIndex].dataset.active = true //it adds the active attribute to our currently active slide
+        delete activeslide.dataset.active // it removes the active attribute from the active slide
+        })
+    });
+</script>
+
+<style>
+    .carousel{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        
+    }
+    ul{
+        list-style: none;
+    }
+    .slide{
+        position: absolute;
+        opacity: 0;
+    }
+    .slide[data-active] {
+        opacity: 1;
+    }
+    /* span{
+        position: absolute;
+        width: 90%;
+        margin: 1rem;
+        top: 6rem;
+    } */
+    button{
+        position: absolute;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        top: 40rem;
+        z-index: 2;
+        transform: translateY(-50%);
+        opacity: .4;
+        cursor: pointer;
+        border-radius: .25rem;
+        padding: 0 .4rem;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    button:hover,
+    button:focus{
+        opacity: .8;
+        background-color: rgba(0, 0, 0, .2);
+    }
+    
+    .prev-button{      
+        position: relative;
+        top: 10rem;  
+        float: left;
+    }
+
+    .next-button{
+        position: relative;
+        top: 10rem;
+        float: right;
+    }
+    .slide-images{
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        left: 5rem; 
+        /* border-radius: 50%; */
+    }
+    p{
+        position: absolute;
+        top: 5rem;
+        left: 30rem;
+        width: 50vw;
+        text-align: center;
+        line-height: 2rem;
+        font-size: 30px;
+        
+    }
+    @media (width < 900px){
+        .slide-images{
+            width: 200px;
+            height: 200px;
+            left: 1.5rem;
+        }
+        p{
+            top: 1rem;
+            left: 16rem;
+            width: 50vw;
+            text-align: left;
+            font-size: 18px;
+        }
+        button{
+            top: 45rem;
+        }
+        .prev-button{
+            top: 5rem;
+        }
+        .next-button{
+            top: 5rem;
+        }
+    }
+    @media (width < 700px){
+
+        button{
+            top: 26rem;
+        }
+        p{
+            font-size: 15px;
+            line-height: 1.5rem;
+            left: 13rem;
+        }
+        .slide-images{
+            width: 150px;
+            height: 150px;
+        }
+        
+    }
+    @media (width < 600px){
+        .slide-images{
+            width: 100px;
+            height: 100px;
+        }
+        p{
+            top: 0rem;
+            left: 10rem;
+            font-size: 12px;
+            line-height: 1rem;
+            width: 40vw;
+        }
+        button{
+            top: 23rem;
+            font-size: 1rem;
+            padding: .1rem;
+        }
+        .prev-button{
+            top: 3rem;
+        }
+        .next-button{
+            top: 3rem;
+        }
+    }
+    @media (width < 500px){
+        .slide-images{
+            left: 0rem;
+            width: 80px;
+            height: 80px;
+        }
+        p{
+            left: 6rem;
+            top: 0rem;
+            width: 50vw;
+            font-size: 10px;
+            line-height: 1rem;
+        }
+        button{
+            top: 17rem;
+            font-size: .5rem;
+            padding: .1rem;
+        }
+        
+    }
+    @media (width < 400px){
+        
+        .slide-images{
+            width: 60px;
+            height: 60px;
+
+        }
+        p{
+            left: 4.5rem;
+            font-size: 2vw;
+            line-height: .8rem;
+        }
+        .prev-button{
+            top: 2rem;
+        }
+        .next-button{
+            top: 2rem;
+        }
+    }
+
+</style>

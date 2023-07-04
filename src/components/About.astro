@@ -1,0 +1,56 @@
+<div class="container">
+    <p>Our Goals</p>
+    <div class="description">
+        FinEdge is a pioneering fintech startup at the forefront of revolutionizing cross-border payments. With a visionary approach, they are dedicated to dismantling the barriers imposed by geographic boundaries, enabling individuals and businesses to effortlessly conduct transactions across borders. By leveraging advanced technologies and innovative solutions, FinEdge empowers their clients with a seamless and secure platform for global payments. Their mission is rooted in the belief that the world should be free from the constraints of borders, fostering an environment where financial transactions flow effortlessly and efficiently. With their cutting-edge solutions, FinEdge is reshaping the way international payments are conducted, offering unparalleled convenience, speed, and cost-effectiveness to their customers. As a leading player in the fintech industry, FinEdge is poised to redefine the future of cross-border transactions, bringing a world of financial possibilities to individuals and businesses alike..
+    </div>
+</div>
+
+<style>
+    .container{
+        display: grid;
+        place-items: center;
+        /* position: absolute;
+		top: 60rem;
+        left: 50%; */
+    }
+    p{
+        font-size: 40px;
+        background: -webkit-linear-gradient(#5a429c, #6161ad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        font-weight: bolder;
+        
+    }
+    .description{
+        text-align: center;
+        padding: 1rem
+        line-height: 2rem;
+        font-size: 20px;
+    }
+
+    @media(width < 900px){
+        p{
+            font-size: 35px;
+        }
+        .description{
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+    }
+    @media (width < 600px){
+        p{
+            font-size: 22px;
+        }
+        .description{
+            font-size: 12px;
+        }
+    }
+    @media (width < 400px){
+        p{
+            font-size: 14px;
+        }
+        .description{
+            font-size: 8px;
+        }
+    }
+</style>

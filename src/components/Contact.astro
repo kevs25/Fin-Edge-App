@@ -1,0 +1,88 @@
+<div class="container">
+    <p>Contact us</p>
+    <form action="">
+        <input type="text" name="name" placeholder="Name"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <textarea rows="8" cols="30" placeholder="Message"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<style>
+    .container{
+        display: grid;
+        place-items: center;
+    }
+    p{
+        font-size: 40px;
+        background: -webkit-linear-gradient(#5a429c, #6161ad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        font-weight: bolder;
+    }
+    
+    input,textarea{
+        padding: 1rem;
+        margin-bottom: 1em;
+        border-radius: 7px;
+        width: 300px;
+        /* border: none; */
+        border-color: #8271f3;
+        outline: none;
+        color:#fff;
+        background-color:rgba(94, 114, 197, 0.1)
+    }
+    input:focus,textarea:focus{
+        border-color: #0b0028;
+    }
+    button{
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 7px;
+        background-color: rgba(9, 9, 79, .7);
+        color: #fff;
+        outline: none;
+        border: none;
+        width: 330px;
+    }
+    button:hover{
+        background-color: #0b0028;
+    }
+
+    @media (width < 900px){
+        p{
+            font-size: 35px;
+        }
+        input,textarea{
+            padding: .5rem;
+        }
+        button{
+            width: 310px;
+        }
+    }
+
+    @media (width < 600px){
+        p{
+            font-size: 22px;
+        }
+        input,textarea{
+            width: 250px;
+        }
+        button{
+            width: 260px;
+        }
+    }
+    @media (width < 400px){
+        p{
+            font-size: 14px;
+        }
+        input,textarea{
+            width: 200px;
+            padding: .3rem;
+        }
+        button{
+            width: 210px;
+            padding: .5rem;
+        }
+    }
+</style>

@@ -1,0 +1,121 @@
+---
+
+---
+
+<nav class="navbar">
+    <div class="title">
+        Fin-Edge 
+    </div>
+    <a class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <div class="navbar-items">
+        <ul>
+            <li><a href="#Home-section">Home</a></li>
+            <li><a href="#Services-section">Services</a></li>
+            <li><a href="#About-section">About</a></li>
+            <li><a href="#Contact-section">Contact-us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script type="module">
+    const toggleButton = document.getElementsByClassName('toggle-button')[0]
+    const navbaritems = document.getElementsByClassName('navbar-items')[0] 
+
+    toggleButton.addEventListener('click', () => {
+        navbaritems.classList.toggle('active')
+    })
+</script>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(0,4,69);
+        background: linear-gradient(90deg, rgba(0,4,69,1) 0%, rgba(16,13,45,1) 50%, rgba(3,0,69,1) 100%);
+        color: white;
+    }
+    .title{
+        font-size: 2rem;
+        margin: .5rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .navbar-items ul{
+        margin: 0;
+        padding: 1rem;
+       
+        display: flex;
+    }
+    .navbar-items li{
+        list-style: none;
+        font-size: 1.2rem;
+    }
+    .navbar-items a{
+        text-decoration: none;
+        color: white;
+        padding: 1rem;
+        display: block;
+    }
+    .navbar-items li:hover {
+        background-color: rgb(22, 22, 94);
+        border-radius: 10px;
+    }
+    .toggle-button{
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+    }
+    .toggle-button .bar{
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+    }
+    @media (width < 600px){
+        .toggle-button{
+            display: flex;
+        }
+        .navbar{
+            flex-direction: column;
+            align-items: flex-start;
+            padding: .5rem;
+        }
+        .navbar-items ul{
+            width: 100%;
+            flex-direction: column;
+        }
+        .navbar-items{
+            display: none;
+            width: 100%;
+        }
+        .navbar-items li{
+            text-align: center;
+        }
+        .navbar-items.active{
+            display: flex;
+        }
+        
+        .toggle-button{
+            top: 1.5rem;
+        }
+    }
+   
+</style>

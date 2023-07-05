@@ -29,7 +29,7 @@
         
         const activeslide = slides.querySelector("[data-active]")
         let newIndex = [...slides.children].indexOf(activeslide) + clickedbtn
-        //converting slides to an array 
+        //converting slides to an array from children 
         if (newIndex < 0) newIndex = slides.children.length - 1 //if we go backwords from first image which is the last image
         if (newIndex >= slides.children.length) newIndex = 0 // if we go past our last slide we start the index from first
 
@@ -56,12 +56,7 @@
     .slide[data-active] {
         opacity: 1;
     }
-    /* span{
-        position: absolute;
-        width: 90%;
-        margin: 1rem;
-        top: 6rem;
-    } */
+    
     button{
         position: absolute;
         background: none;
